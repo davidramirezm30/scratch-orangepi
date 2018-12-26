@@ -46,9 +46,9 @@ from sgh_cheerlights import CheerLights
 import urllib2
 from sgh_GetJSONFromURL import GetJSONFromURL
 import kinematics
-import pigpio
-import dht11
-sgh_pigpio = None
+#import pigpio
+#import dht11
+#sgh_pigpio = None
 
 
 getjsonfromurl = GetJSONFromURL()
