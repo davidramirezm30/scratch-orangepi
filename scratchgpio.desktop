@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/opt/scratch-orangepi/scratchgpio.sh
+Icon=scratch
+Terminal=false
+Name=ScratchGPIO
+Comment=Programming system and content development tool
+Categories=Application;Education;Development;
+MimeType=application/x-scratch-project
+Path=
+StartupNotify=false
+Name[es_ES]=scratchgpio.desktop
