@@ -4,7 +4,7 @@
 #Version 0.4 - 20Mar13 meltwater - change to use provided name for home
 #Version 1.0 - 29Oct13 sw - change to cd into simplesi_scratch_handler to run servods OK
 sudo pkill -f scratchgpio_handler
-cd /opt/scratchgpio8
+cd /opt/scratchgpio
 sudo python scratchgpio_handler.py 127.0.0.1 standard &
 #sudo python scratchgpio_handler8.py &
-scratch --document "/home/pi/Documents/Scratch Projects/rsc.sb" &
+scratch --document "/home/opi/Documents/Scratch Projects/rsc.sb" &
