@@ -5,8 +5,8 @@
 #Version 1.0 - 29Oct13 sw - change to cd into simplesi_scratch_handler to run servods OK
 sudo pkill -f scratchgpio_handler
 sudo pkill -f S3GPIOServer
-cd /opt/scratchgpio8
-sudo python scratchgpio_handler8.py &
+cd /opt/scratchgpio
+sudo python scratchgpio_handler.py &
 sudo python S3GPIOServer.py &
 chromium-browser --start-maximized --load-extension=S3GPIOExtension https://scratch.mit.edu/projects/285979180
 sudo pkill -f scratchgpio_handler
