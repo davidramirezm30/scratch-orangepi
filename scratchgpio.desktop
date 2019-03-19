@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Exec=/opt/scratch-orangepi/scratchgpio.sh
+Exec=/opt/scratchgpio/scratchgpio.sh
 Icon=scratch
 Terminal=false
 Name=ScratchGPIO
