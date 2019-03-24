@@ -48,7 +48,7 @@ class PWM :
     #if (self.debug):
     print "Final pre-scale: %d" % prescale
 
-    oldmode = self.i2c.readU8(self.__MODE1)
+    oldmode = self.i2c.readU8(self.__MODE1);
     newmode = (oldmode & 0x7F) | 0x10             # sleep
     self.i2c.write8(self.__MODE1, newmode)        # go to sleep
     self.i2c.write8(self.__PRESCALE, int(math.floor(prescale)))

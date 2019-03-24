@@ -20,8 +20,7 @@
 #V8.0.06 20Nov16 Name mapping list added
 
 
-#import RPi.GPIO as GPIO
-import OPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 import os
 import datetime as dt
@@ -32,30 +31,26 @@ SCRIPTPATH = os.path.split(os.path.realpath(__file__))[0]
 
 class GPIOController :
 
-    # @staticmethod
-    # def getPiRevision():
-        # "Gets the version number of the Raspberry Pi board"
-        # #return GPIO.RPI_INFO['P1_REVISION']
-        # return GPIO.OPI_INFO['P1_REVISION']
+    @staticmethod
+    def getPiRevision():
+        "Gets the version number of the Raspberry Pi board"
+        return GPIO.RPI_INFO['P1_REVISION']
     
     def cleanup(self):
         GPIO.cleanup()
 
     def __init__(self, debug=False):
-        GPIO.setboard(GPIO.PCPCPLUS)    # Orange Pi PC Plus board
         GPIO.setmode(GPIO.BOARD)
         GPIO.setwarnings(False)
         GPIO.cleanup()
-        self.piRevision = 3
-        #self.piRevision = self.getPiRevision()
+        self.piRevision = self.getPiRevision()
         self.i2cbus = 1
-        #if self.piRevision == 1:
-        #    self.i2cbus = 0
-        #print "RPi.GPIO Version" , GPIO.VERSION
-        print "OPi.GPIO Version" , GPIO.VERSION
-        #print "Board Revision" , self.piRevision
+        if self.piRevision == 1:
+            self.i2cbus = 0
+        print "RPi.GPIO Version" , GPIO.VERSION
+        print "Board Revision" , self.piRevision
         
-		#self.numOfPins = 41 #Orange Pi has 40
+
         #Set some constants and initialise lists
         self.numOfPins = 27 #there are actually 26 but python can't count properly :)
         if self.piRevision > 2:
@@ -153,9 +148,8 @@ class GPIOController :
             self.gpioLookup = [99,99,99, 2,99, 3,99, 4,14,99,15,17,18,27,99,22,23,99,24,10,99, 9,25,11, 8,99, 7]
             
         if self.piRevision > 2:
-            self.validPins =  [          3,    5,    7, 8,   10,11,12,13,   15,16,   18,19,   21,22,23,24,   26,      29,   31,32,33,   35,36,37,38,   40]
-            self.gpioLookup = [99,99,99, 3,99, 5,99, 7, 8,99,10,11,12,13,99,15,16,99,18,19,99,21,22,23,24,99,26,99,99,29,99,31,32,33,99,35,36,37,38,99,40]
-            #[99,99,99, 2,99, 3,99, 4,14,99,15,17,18,27,99,22,23,99,24,10,99, 9,25,11, 8,99, 7,99,99, 5,99, 6,12,13,99,19,16,26,20,99,21]
+            self.validPins =  [3,           5,       7, 8,   10,11,12,13,   15,16,   18,19,   21,22,23,24,   26,      29,   31,32,33,   35,36,37,38,   40]
+            self.gpioLookup = [99,99,99, 2,99, 3,99, 4,14,99,15,17,18,27,99,22,23,99,24,10,99, 9,25,11, 8,99, 7,99,99, 5,99, 6,12,13,99,19,16,26,20,99,21]
 
         self.revgpioLookup = [99] *41    
         for index, item in enumerate(self.gpioLookup):

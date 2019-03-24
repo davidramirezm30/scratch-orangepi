@@ -22,8 +22,7 @@
 
 
 import time
-#import RPi.GPIO as GPIO
-import OPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 
 #!/usr/bin/python

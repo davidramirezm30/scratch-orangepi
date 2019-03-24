@@ -19,8 +19,7 @@
 
 Version =  '0.1.0' # 12Nov13
 
-#import RPi.GPIO as GPIO
-import OPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 import os
 import datetime as dt
@@ -29,8 +28,7 @@ import threading
 
 def getPiRevision():
     "Gets the version number of the Raspberry Pi board"
-    #return GPIO.RPI_REVISION
-    return GPIO.OPI_REVISION
+    return GPIO.RPI_REVISION
 
 def cleanup(self):
     GPIO.cleanup()
